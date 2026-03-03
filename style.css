@@ -318,12 +318,13 @@ h4 {
 }
 
 .service-card {
-    background: var(--bg-white);
+    background: rgba(223, 138, 138, 0.04);
     padding: 40px 32px;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(223, 138, 138, 0.1);
+    border-top: 3px solid var(--primary-color);
 }
 
 .service-card:hover {
