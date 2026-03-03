@@ -6,12 +6,15 @@
 }
 
 :root {
-    --primary-color: #df8a8a; /* Derived soft coral/pink from the clinic logo */
+    --primary-color: #df8a8a;
+    /* Derived soft coral/pink from the clinic logo */
     --primary-hover: #c47575;
-    --text-dark: #2c3e50; /* Deep professional grey */
+    --text-dark: #2c3e50;
+    /* Deep professional grey */
     --text-light: #5a6c7d;
     --bg-white: #ffffff;
-    --bg-light: #fcf9f9; /* Soft tint of warm white */
+    --bg-light: #fcf9f9;
+    /* Soft tint of warm white */
     --bg-surface: #f7f3f3;
     --font-main: 'Inter', sans-serif;
     --radius-sm: 6px;
@@ -66,7 +69,10 @@ ul {
 }
 
 /* Typography */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -317,16 +323,23 @@ h1, h2, h3, h4 {
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
-    border: 1px solid rgba(0,0,0,0.03);
+    border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-md);
-    border-color: rgba(223, 138, 138, 0.2);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.service-card:hover .service-icon {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    transform: scale(1.1);
 }
 
 .service-icon {
+    transition: var(--transition);
     width: 60px;
     height: 60px;
     background-color: rgba(223, 138, 138, 0.1);
@@ -452,7 +465,7 @@ h1, h2, h3, h4 {
     transform: none;
 }
 
-.contact-info > p {
+.contact-info>p {
     color: var(--text-light);
     margin-bottom: 32px;
 }
@@ -519,13 +532,14 @@ footer {
 
 /* Responsive */
 @media (max-width: 992px) {
+
     .hero-container,
     .about-container,
     .contact-container {
         grid-template-columns: 1fr;
         gap: 48px;
     }
-    
+
     .hero h1 {
         font-size: 2.8rem;
     }
@@ -576,4 +590,65 @@ footer {
         flex-direction: column;
         gap: 12px;
     }
+}
+
+/* Scroll Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform, visibility;
+}
+
+.slide-up {
+    transform: translateY(40px);
+}
+
+.slide-left {
+    transform: translateX(-40px);
+}
+
+.slide-right {
+    transform: translateX(40px);
+}
+
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translate(0);
+}
+
+/* Stagger delays */
+.services-grid .animate-on-scroll:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.services-grid .animate-on-scroll:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.services-grid .animate-on-scroll:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.trust-features .animate-on-scroll:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.trust-features .animate-on-scroll:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.trust-features .animate-on-scroll:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.trust-features .animate-on-scroll:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.reviews-grid .animate-on-scroll:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.reviews-grid .animate-on-scroll:nth-child(3) {
+    transition-delay: 0.2s;
 }
